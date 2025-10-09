@@ -1,0 +1,24 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd" version="3.0">
+    <persistence-unit name="Integrador2" transaction-type="RESOURCE_LOCAL">
+        <!--  Configuración de conexión JDBC  -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Aca van las clases que utilizan el persistence? consultar -->
+        <class> Main </class>
+
+        <!--  Configura la conexión a la base de datos  -->
+        <properties>
+            <!--  JDBC Config  -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/exampleDB"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <!--  Hibernate specific properties  -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <!--  Manejador de transacciones JDBC (no JTA)  -->
+            <property name="hibernate.transaction.coordinator_class" value="jdbc"/>
+            <!--  Configuración opcional  -->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
