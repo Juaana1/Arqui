@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "f5562a49-9c84-4480-a8bf-041fdec75c98",
+		"name": "ArquiTp3Grupo13",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24274846"
+	},
+	"item": [
+		{
+			"name": "AddCarrera",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"nombre\": \"TUARI2\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carreras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carreras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCarreras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/carreras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carreras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEstudianteLegajo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/estudiantes/legajo/777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudiantes",
+						"legajo",
+						"777"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dni\": 1,\r\n  \"nombre\": \"Pedro\",\r\n  \"apellido\": \"Picapiedras\",\r\n  \"edad\": 22,\r\n  \"genero\": \"Masculino\",\r\n  \"ciudad\": \"Tandil\",\r\n  \"legajo\": 777\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/estudiantes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudiantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEstudiantesCarreras",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"antiguedad\": 2,\r\n  \"esGraduado\": false,\r\n  \"fechaInscripcion\": 1011112017,\r\n  \"fechaEgreso\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/estudianteCarreras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudianteCarreras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEstudiantesGenero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/estudiantes/genero/Masculino",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudiantes",
+						"genero",
+						"Masculino"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCarrerasOrdByCantInscriptos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/estudianteCarreras/ord/inscriptos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudianteCarreras",
+						"ord",
+						"inscriptos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEstudianteByCarreraYCiudad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/estudianteCarreras/estudianteByCarreraYCiudad?Carrera=1&Ciudad=Tandil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudianteCarreras",
+						"estudianteByCarreraYCiudad"
+					],
+					"query": [
+						{
+							"key": "Carrera",
+							"value": "1"
+						},
+						{
+							"key": "Ciudad",
+							"value": "Tandil"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddEstudianteCarrera",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dni\": 1,\r\n  \"idCarrera\": 1,\r\n  \"antiguedad\": 20,\r\n  \"esGraduado\": true,\r\n  \"fechaInscripcion\": 2017,\r\n  \"fechaEgreso\": 2020\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/estudianteCarreras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudianteCarreras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEstudiantesPorApellido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/estudiantes/ordenadosByApellido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudiantes",
+						"ordenadosByApellido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReporte",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/estudianteCarreras/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"estudianteCarreras",
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
